@@ -1,45 +1,52 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+const Header = ({ course }) => {
+  return (
+    <div>
+      <h1>{course}</h1>
+    </div>
+  );
+};
+
+const Content = ({ cParts }, { cExercises }) => {
+  console.log(cParts.length);
+  for (let i = 0; i > cParts.length; i++) {
+    console.log(cParts);
+    console.log(cExercises);
+    console.log(i);
+
+    <p>
+      {cParts[i]} {cExercises[i]}
+    </p>;
+  }
+};
+
+const Total = ({ tExercises }) => {
+  let sum = 0;
+  tExercises.map((tExercises) => (sum += tExercises));
+  return (
+    <div>
+      <p>Number of exercises {sum}</p>
+    </div>
+  );
+};
+
 const App = () => {
   const parts = [
     "Fundamentals of React",
     "Using props to pass data",
     "State of a component",
   ];
-
-  const exercise = [10, 7, 14];
+  const exercises = [10, 7, 14];
 
   return (
     <div>
-      <Header courseName="Half Stack application development" />
-      <Content coursePart={parts} courseExercise={exercise} />
-      <Total ejercicios={exercise} />
+      <Header course="Half Stack application development" />
+      <Content cParts={parts} cExercises={exercises} />
+      <Total tExercises={exercises} />
     </div>
   );
-};
-
-const Header = ({ courseName }) => {
-  <div>
-    <h1>{courseName}</h1>
-  </div>;
-};
-
-const Content = ({ coursePart }, { courseExercise }) => {
-  {
-    console.log(coursePart, courseExercise);
-  }
-  for (const i = 1; (i = coursePart.length); i++) {
-    console.log(i);
-    console.log(coursePart.length);
-    <p>
-      {coursePart[i]} {courseExercise[i]}
-    </p>;
-  }
-};
-
-const Total = (ejercicios) => {
-  <p>Number of exercise for {ejercicios[0] + ejercicios[1] + ejercicios[2]}</p>;
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
