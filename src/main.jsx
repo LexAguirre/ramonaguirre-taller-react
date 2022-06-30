@@ -9,19 +9,53 @@ const Header = ({ course }) => {
   );
 };
 
+/*const Content = ({ cParts, cExercises }) => {
+  let info = <ContentInfo cParts={cParts} cExercises={cExercises} />;
+
+  info.map((info) => {
+    return (
+      <div>
+        <p>{info}</p>;
+      </div>
+    );
+  });
+};*/
+
 const Content = ({ cParts, cExercises }) => {
-  let text = "";
+  let tempo = "";
+  let text = [];
   for (let i = 0; i < cParts.length; i++) {
-    console.log(cParts[i], cExercises[i]);
-    text =
-      text +
-      (
-        <p>
-          {cParts[i]} {cExercises[i]}
-        </p>
-      );
+    //console.log(cParts[i], cExercises[i]);
+    tempo = cParts[i] + " " + cExercises[i];
+    text.push(tempo);
   }
-  return text;
+
+  return (
+    <ul>
+      {text.map((info) => (
+        <li>{info}</li>
+      ))}
+    </ul>
+  );
+
+  /*for (let j = 0; j < text.length; j++) {
+    console.log(j < text.length);
+    return (
+      <div>
+        <p>{text[j]}</p>
+      </div>
+    );
+  }
+
+  return text.map((info) => {
+    Info = ContentInfo = ({ cParts, cExercises })
+    <div>
+      <p>{info}</p>;
+    </div>;
+    {
+      console.log(info);
+    }
+  });*/
 };
 
 /*const Content = ({ cParts, cExercises }) => {
