@@ -1,1 +1,0 @@
-# Part1_2-Ejercicio-1
