@@ -9,7 +9,34 @@ const Header = ({ course }) => {
   );
 };
 
-const Content = ({ cParts }, { cExercises }) => {
+const Content = ({ cParts, cExercises }) => {
+  let text = "";
+  for (let i = 0; i < cParts.length; i++) {
+    console.log(cParts[i], cExercises[i]);
+    text =
+      text +
+      (
+        <p>
+          {cParts[i]} {cExercises[i]}
+        </p>
+      );
+  }
+  return text;
+};
+
+/*const Content = ({ cParts, cExercises }) => {
+  let text = "";
+  for (let i = 0; i < cParts.length; i++) {
+    text += (
+      <p>
+        {cParts[i]} {cExercises[i]}
+      </p>
+    );
+  }
+  return text;
+};*/
+
+/*const Content = ({ cParts }, { cExercises }) => {
   console.log(cParts.length);
   for (let i = 0; i > cParts.length; i++) {
     console.log(cParts);
@@ -20,7 +47,7 @@ const Content = ({ cParts }, { cExercises }) => {
       {cParts[i]} {cExercises[i]}
     </p>;
   }
-};
+};*/
 
 const Total = ({ tExercises }) => {
   let sum = 0;
